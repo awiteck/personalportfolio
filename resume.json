@@ -1,0 +1,96 @@
+{
+    "basic_info": {
+      "description_header": "Hey.",
+      "description": "I’m Aidan. I like math, music, and programming.",
+      "section_name": {
+        "about": "About me",
+        "projects": "Projects",
+        "skills": "Skills",
+        "experience": "Experience"
+      }
+    },
+    "projects": [
+      {
+        "title": "Dlamos",
+        "startDate": "2022",
+        "description": "iOS app that uses Spotify API, creating a social media app where users can share music and artists can interact directly with their fanbase, adding a large-scale collaborative element to the music creation process. Over 8k lines of code",
+        "images": [
+          "/dlamos1.jpg",
+          "/dlamos2.jpg",
+          "/dlamos3.jpg"
+        ],
+        "url": "",
+        "technologies": [
+          {
+            "class": "devicon-swift-plain",
+            "name": "SwiftUI"
+          },
+          {
+            "class": "devicon-firebase-plain",
+            "name": "Firebase (+ Cloud)"
+          },
+          {
+            "class": "devicon-javascript-plain",
+            "name": "JavaScript"
+          }
+        ]
+      },
+      {
+        "title": "Radiation",
+        "startDate": "2022",
+        "description": "Generative art project using p5.js, inspired off the album cover for the legendary Cosmogramma",
+        "images": [
+          "/radiation1.png"
+        ],
+        "url": "https://medium.com/@awiteck/generative-art-is-awesome-heres-how-i-started-dd24cf80c4af",
+        "technologies": [
+          {
+            "class": "devicon-javascript-plain",
+            "name": "JavaScript"
+          }
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "JPMorgan Chase & Co",
+        "title": "Software Engineer Intern",
+        "years": "06.2023-08.2023",
+        "mainTech": [
+          
+        ],
+        "technologies": [
+          
+        ]
+      },
+      {
+        "company": "ZettaBlock",
+        "title": "Software Engineering and Product Management Intern",
+        "years": "05.2022 - 08.2022",
+        "mainTech": [
+          "SQL"
+        ],
+        "technologies": [
+          "Presto",
+          "SparkSQL",
+          "Solidity",
+          "GraphQL",
+          "Apache Airflow"
+        ]
+      },
+      {
+        "company": "Harvard University",
+        "title": "Student Researcher, Professor Jenny Hoffman, Physics",
+        "years": "06.2019 - 04.2020",
+        "mainTech": [
+          "Python"
+        ],
+        "technologies": [
+          "Pandas",
+          "Keras",
+          "fast.ai"
+        ],
+        "url": "https://meetings.aps.org/Meeting/MAR20/Session/G20.3"
+      }
+    ]
+  }

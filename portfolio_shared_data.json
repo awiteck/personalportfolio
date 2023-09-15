@@ -1,0 +1,83 @@
+{
+    "basic_info": {
+      "name": "AIDAN WITECK",
+      "titles": [ "Fullstack Developer", "Mobile App Developer", "Data Engineer", "Insane music taste"],
+      "social": [
+        {
+          "name": "github",
+          "url": "https://github.com/awiteck",
+          "class": "fab fa-github"
+        }
+      ],
+      "image": "myProfile.jpg"
+    },
+    "skills": {
+      "icons": [
+        {
+          "name": "Swift (+UI)",
+          "class": "devicon-swift-plain"
+        },
+        {
+          "name": "Xcode",
+          "class": "devicon-xcode-plain"
+        },
+        {
+          "name": "Firebase",
+          "class": "devicon-firebase-plain"
+        },
+        {
+          "name": "React",
+          "class": "devicon-react-plain"
+        },
+        {
+          "name": "HTML 5",
+          "class": "devicon-html5-plain"
+        },
+        {
+          "name": "CSS 3",
+          "class": "devicon-css3-plain"
+        },
+        {
+          "name": "TypeScript",
+          "class": "devicon-typescript-plain"
+        },
+        {
+          "name": "Jasmine",
+          "class": "devicon-jasmine-plain"
+        },
+        {
+          "name": "JavaScript",
+          "class": "devicon-javascript-plain"
+        },
+        {
+          "name": "Python",
+          "class": "devicon-python-plain"
+        },
+        {
+          "name": "Java",
+          "class": "devicon-java-plain"
+        },
+        {
+          "name": "SQL",
+          "class": "devicon-postgresql-plain"
+        },
+        
+        {
+          "name": "Flask",
+          "class": "devicon-flask-plain"
+        },
+        {
+          "name": "Solidity",
+          "class": "devicon-solidity-plain"
+        },
+        {
+          "name": "pandas",
+          "class": "devicon-pandas-plain"
+        },
+        {
+          "name": "C",
+          "class": "devicon-c-plain"
+        }
+      ]
+    }
+  }

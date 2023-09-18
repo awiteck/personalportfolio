@@ -15,6 +15,7 @@
         "startDate": "2022",
         "description": "iOS app that uses Spotify API, creating a social media app where users can share music and artists can interact directly with their fanbase, adding a large-scale collaborative element to the music creation process. Over 8k lines of code",
         "images": [
+          "/dlamos_preview.png",
           "/dlamos1.jpg",
           "/dlamos2.jpg",
           "/dlamos3.jpg"
@@ -47,6 +48,25 @@
           {
             "class": "devicon-javascript-plain",
             "name": "JavaScript"
+          }
+        ]
+      },
+      {
+        "title": "VitalMap",
+        "startDate": "2022",
+        "description": "Lead team to build a community-driven Progressive Web Application that eliminates the barriers between students and getting the essential products they need",
+        "images": [
+          "/vitalmap1.png"
+        ],
+        "url": "vitalmap.onrender.com",
+        "technologies": [
+          {
+            "class": "devicon-javascript-plain",
+            "name": "JavaScript"
+          },
+          {
+            "class": "devicon-flask-plain",
+            "name": "Flask"
           }
         ]
       }

@@ -81,6 +81,18 @@
             "name": "CSS"
           }
         ]
+      },
+      {
+        "title": "Precalculus Textbook",
+        "startDate": "2018",
+        "description": "Wrote 160 page advanced precalculus textbook, self-published. Book covers advanced math concepts in support of high school course. Completed and released summer 2019",
+        
+        "images": [
+          "/textbook.png"
+        ],
+        "downloadUrl": "/textbook.pdf",
+        "technologies": [
+        ]
       }
     ],
     "experience": [

@@ -21,7 +21,6 @@
           "/dlamos3.jpg"
         ],
         "url": "",
-        "downloadUrl": "",
         "technologies": [
           {
             "class": "devicon-swift-plain",
@@ -45,7 +44,6 @@
           "/radiation1.png"
         ],
         "url": "https://medium.com/@awiteck/generative-art-is-awesome-heres-how-i-started-dd24cf80c4af",
-        "downloadUrl": "",
         "technologies": [
           {
             "class": "devicon-javascript-plain",
@@ -60,8 +58,7 @@
         "images": [
           "/vitalmap1.png"
         ],
-        "url": "vitalmap.onrender.com",
-        "downloadUrl": "",
+        "url": "https://vitalmap.onrender.com",
         "technologies": [
           {
             "class": "devicon-javascript-plain",
@@ -93,8 +90,7 @@
         "images": [
           "/textbook.png"
         ],
-        "url": "",
-        "downloadUrl": "/textbook.pdf",
+        "url": "/textbook.pdf",
         "technologies": [
         ]
       }

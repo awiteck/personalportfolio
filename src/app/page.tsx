@@ -1,101 +1,93 @@
-import Image from "next/image";
+// src/app/page.tsx
+import { personalInfo } from '@/config/personal'
+import { projects } from '@/config/projects'
+import Link from 'next/link'
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+
 
 export default function Home() {
+  const featuredProjects = projects.filter(p => p.isFeatured);
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+    {/* Contact Link */}
+      
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <main className="max-w-2xl mx-auto px-4 py-16">
+        <div className="flex justify-between items-center mb-16">
+          <h1 className="text-2xl font-bold">{personalInfo.name}</h1>
+          <Link
+            href="/contact"
+            className="text-[#3E2723] underline hover:text-[#5D4037]"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Hit me up
+          </Link>
+        </div>
+
+        {/* About Me */}
+        <div className="mb-16">
+          <h2 className="text-xl font-semibold mb-6">About Me</h2>
+          <p>
+            Hey, I'm Aidan. I graduated from Princeton in 2024 and majored in Operations Resrearch and Financial Engineering (that's a long name! Basically, just a lot of <strong>machine learning</strong>, <strong>probability theory</strong>, and <strong>optimization</strong>). I also minored in <strong>Applications of Computing</strong> and <strong>Mandarin Chinese</strong>.
+
+            <br /><br />
+
+            I've been passionate about AI/ML for quite a while, and have been <a href="https://meetings.aps.org/Meeting/MAR20/Session/G20.3" className="text-[#967969] underline hover:text-[#5D4037]">building neural nets</a> for over 5 years now. 
+
+            <br /><br />
+
+            I was also on the varsity heavyweight rowing team. Now, I mostly run (currently training for Napa Marathon this March!).
+          </p>
+        </div>
+
+
+        {/* Projects List */}
+        <div>
+          <h2 className="text-xl font-semibold mb-6">Some cool projects</h2>
+          <p className="text-gray-700 italic mb-6">
+            I've worked on a lot of stuff, but here are some of my favorites. To see everything, check out my{' '}
+            <Link href="/projects" className="text-[#967969] underline hover:text-[#5D4037]">
+              full project list
+            </Link>
+            .
+          </p>
+          
+          <ul className="space-y-4">
+            {featuredProjects.map((project) => (
+              <li key={project.slug}>
+                <span className="text-md">
+                  <Link 
+                    href={`/portfolio/${project.slug}`}
+                    className="text-[#967969] underline hover:text-[#5D4037]"
+                  >
+                    {project.name}
+                  </Link>
+                  : {project.description}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+
+      {/* Fixed position social icons */}
+      <div className="fixed bottom-8 left-8 flex gap-4">
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href={personalInfo.github}
           target="_blank"
           rel="noopener noreferrer"
+          className="text-gray-600 hover:text-gray-900 transition-colors"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          <FaGithub size={32} />
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href={personalInfo.linkedin}
           target="_blank"
           rel="noopener noreferrer"
+          className="text-gray-600 hover:text-gray-900 transition-colors"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          <FaLinkedin size={32} />
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+    </>
+  )
 }

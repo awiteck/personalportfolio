@@ -2,31 +2,39 @@
 import { personalInfo } from '@/config/personal'
 import { projects } from '@/config/projects'
 import Link from 'next/link'
-// import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Image from 'next/image'
+import BioSummary from '@/components/BioSummary';
+import MobileNav from '@/components/MobileNav'
 
 export default function Home() {
   const featuredProjects = projects.filter(p => p.isFeatured);
   return (
     <>
+    <MobileNav />
     {/* Contact Link */}
       
 
       <main className="max-w-2xl mx-auto px-4 py-16">
-        <div className="flex justify-between items-center mb-16">
-          <h1 className="text-2xl font-bold">{personalInfo.name}</h1>
-          <Link
-            href="/contact"
-            className="text-[#3E2723] underline hover:text-[#5D4037]"
-          >
-            Get in touch
-          </Link>
+        {/* Header section */}
+        <div className="mb-16">
+          <div className="flex justify-between items-center mb-4">
+            <h1 className="text-2xl font-bold">{personalInfo.name}</h1>
+            <Link
+              href="/contact"
+              className="text-[#3E2723] underline hover:text-[#5D4037]"
+            >
+              Get in touch
+            </Link>
+          </div>
+          <BioSummary />
         </div>
 
         {/* About Me */}
-        <div className="mb-16">
-          <h2 className="text-xl font-semibold mb-6">About Me</h2>
-          <p>
+        <div className="hidden md:block">
+          {/* About Me */}
+          <div className="mb-16">
+            <h2 className="text-xl font-semibold mb-6">About Me</h2>
+            <p>
             Hey, I'm Aidan. I graduated from Princeton in 2024 and majored in Operations Resrearch and Financial Engineering (that's a long name! Basically, just a lot of <strong>machine learning</strong>, <strong>probability theory</strong>, and <strong>optimization</strong>). I also minored in <strong>Applications of Computing</strong> and <strong>Mandarin Chinese</strong>.
 
             <br /><br />
@@ -36,41 +44,73 @@ export default function Home() {
             <br /><br />
 
             I was also on the varsity heavyweight rowing team. Now, I mostly run (currently training for Napa Marathon this March!).
-          </p>
-        </div>
+            </p>
+          </div>
 
 
-        {/* Projects List */}
-        <div>
-          <h2 className="text-xl font-semibold mb-6">Some cool projects</h2>
-          <p className="text-gray-700 italic mb-6">
-            I've worked on a lot of stuff, but here are some of my favorites. To see everything, check out my{' '}
-            <Link href="/projects" className="text-[#967969] underline hover:text-[#5D4037]">
-              full project list
-            </Link>
-            .
-          </p>
-          
-          <ul className="space-y-4">
-            {featuredProjects.map((project) => (
-              <li key={project.slug}>
-                <span className="text-md">
-                  <Link 
-                    href={`/portfolio/${project.slug}`}
-                    className="text-[#967969] underline hover:text-[#5D4037]"
-                  >
-                    {project.name}
-                  </Link>
-                  : {project.description}
-                </span>
-              </li>
-            ))}
-          </ul>
+          {/* Projects List */}
+          <div>
+            <h2 className="text-xl font-semibold mb-6">My favorite projects</h2>
+            <p className="text-gray-700 italic mb-6">
+              I've worked on a lot of stuff, but here are some of my favorites. To see everything, check out my{' '}
+              <Link href="/projects" className="text-[#967969] underline hover:text-[#5D4037]">
+                full project list
+              </Link>
+              .
+            </p>
+            
+            <ul className="space-y-4">
+              {featuredProjects.map((project) => (
+                <li key={project.slug}>
+                  <span className="text-md">
+                    <Link 
+                      href={`/portfolio/${project.slug}`}
+                      className="text-[#967969] underline hover:text-[#5D4037]"
+                    >
+                      {project.name}
+                    </Link>
+                    : {project.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </main>
 
+
       {/* Fixed position social icons */}
-      <div className="fixed bottom-8 left-8 flex gap-4">
+      <div className="fixed bottom-8 left-8 hidden md:flex gap-4">
+        <a
+          href={personalInfo.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-gray-900 transition-colors"
+        >
+         <Image 
+          src="/icons/github.svg"
+          alt="GitHub"
+          width={32}
+          height={32}
+        />
+        </a>
+        <a
+          href={personalInfo.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-gray-900 transition-colors"
+        >
+          <Image 
+            src="/icons/linkedin.svg"
+            alt="LinkedIn"
+            width={32}
+            height={32}
+          />
+        </a>
+      </div>
+
+      {/* Mobile social icons */}
+      <div className="fixed bottom-4 left-0 right-0 flex justify-center gap-6 md:hidden">
         <a
           href={personalInfo.github}
           target="_blank"

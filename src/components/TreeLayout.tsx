@@ -54,7 +54,7 @@ export default function TreeLayout({ children }: TreeLayoutProps) {
   return (
     <div className="relative">
       {/* Left tree cluster */}
-      <div className="fixed left-4 top-0 bottom-0 pointer-events-none flex">
+      <div className="fixed left-4 top-0 bottom-0 pointer-events-none hidden md:flex">
         <div className="relative w-[400px]">
           <div className="absolute left-0 top-0">
             <TreeCanvas height={pageHeight} trunkColor="#654321" />
@@ -69,7 +69,7 @@ export default function TreeLayout({ children }: TreeLayoutProps) {
       </div>
 
       {/* Right tree cluster */}
-      <div className="fixed right-4 top-0 bottom-0 pointer-events-none flex">
+      <div className="fixed right-4 top-0 bottom-0 pointer-events-none hidden md:flex">
         <div className="relative w-[400px]">
           <div className="absolute right-0 top-0">
             <TreeCanvas height={pageHeight} trunkColor="#654321" />

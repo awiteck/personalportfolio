@@ -38,7 +38,9 @@ The technical goal here was to implement an AI agent from scratch, but my broade
     name: "Princeton Senior Thesis: \"Rethinking the Hype of Transformer Models: Examples from Electric Load Forecasting\"",
     slug: "princeton-senior-thesis",
     description: "Developed a transformer-based model from scratch that can forecast electricity loads based on historical data and forecasted weather patterns.",
-    fullDescription:"Developed a transformer-based model from scratch that can forecast electricity loads based on historical data and forecasted weather patterns.",
+    fullDescription:`Abstract: As the electric grid experiences increased stress over time, having accurate load forecasting models is becoming a persistent challenge. This thesis emphasizes the quest for an accurate, general, and scalable load forecasting model that can be deployed across a wide variety of energy landscapes. Current production-level forecasting solutions are highly customized, incorporating detailed, region-speciﬁc insights into the model architectures. While eﬀective, these solutions are quite complicated and do not easily scale to other regions.
+
+Originally introduced in 2017 for natural language processing, transformers — the key component of large-language models such as ChatGPT — have proven to be useful in a range of ﬁelds. This thesis aims to explore whether transformers are actually eﬀective as a short-term load forecasting technology. We ﬁrst develop a specialized transformer-based model that uses previous loads, as well as weather and temporal variables, to predict future loads. We then train and evaluate this model on new data, benchmarking its performance against that of various simpler models. Despite the broad success of transformers in numerous ﬁelds, we ﬁnd that the transformerbased model is surprisingly outperformed by a very simple linear neural network, challenging the perception of transformers as a highly performant sequence modeling architecture, at least when it comes to short sequence time-series problems.`,
     technologies: ["Pytorch", "Transformers", "Python"],
     image: "princeton-senior-thesis.png",
     githubUrl: "https://github.com/awiteck/thesis",
@@ -78,6 +80,15 @@ Now, the other issue I hope to address: I feel there has been some deficiency an
       "PDF": "https://www.aidanwiteck.com/textbook.pdf"
     },
     isFeatured: true
+  },
+  {
+    name: "Snake PPO Agent",
+    slug: "snake-ppo-agent",
+    description: "Implemented a PPO agent from scratch to play the game Snake.",
+    fullDescription: "Implemented a PPO agent from scratch to play the game Snake. I did this mainly to learn more about how PPO works on a technical level, as well as get familiar with Gymnasium and Stable Baselines.",
+    technologies: ["Python", "PPO", "Reinforcement Learning", "Gymnasium", "Stable Baselines"],
+    githubUrl: "https://github.com/awiteckzb/multi_snake_ppo",
+    isFeatured: false
   },
 
   {

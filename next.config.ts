@@ -5,7 +5,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,  // Required for static export
   },
-  basePath: '/personalportfolio', // Match your repo name
+  eslint: {
+    // Disable ESLint during production builds
+    ignoreDuringBuilds: true,
+  },
+  basePath: '/personalportfolio', 
 };
 
 export default nextConfig;

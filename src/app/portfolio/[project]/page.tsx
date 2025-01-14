@@ -5,14 +5,19 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
+// Generate all possible static paths for the dynamic route
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    project: project.slug,
+  }));
+}
+
 export default async function ProjectPage({
   params,
 }: {
-  params: Promise<{ project: string }>;
+  params: { project: string };
 }) {
-  const { project: projectSlug } = await params;
-
-  const project = projects.find((p) => p.slug === projectSlug);
+  const project = projects.find((p) => p.slug === params.project);
 
   if (!project) {
     notFound();

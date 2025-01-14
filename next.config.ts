@@ -9,7 +9,8 @@ const nextConfig: NextConfig = {
     // Disable ESLint during production builds
     ignoreDuringBuilds: true,
   },
-  basePath: '/personalportfolio', 
+  trailingSlash: true,  // Add this
+  // basePath: '',         // Add this if you're using a custom domain
 };
 
 export default nextConfig;

@@ -5,11 +5,15 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import React from 'react';
 
-export default function ProjectPage({ 
-  params 
-}: { 
-  params: { project: string } 
-}) {
+
+interface PageProps {
+  params: {
+    project: string
+  }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export default function ProjectPage({ params, searchParams }: PageProps) {
   const project = projects.find(p => p.slug === params.project)
   
   if (!project) {

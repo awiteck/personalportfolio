@@ -1,23 +1,21 @@
 // src/app/portfolio/[project]/page.tsx
-import { projects } from '@/config/projects'
-import Link from 'next/link'
-import Image from 'next/image'
-import { notFound } from 'next/navigation'
+import { projects } from '@/config/projects';
+import Link from 'next/link';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import React from 'react';
 
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ project: string }>;
+}) {
+  const { project: projectSlug } = await params;
 
-interface PageProps {
-  params: {
-    project: string
-  }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+  const project = projects.find((p) => p.slug === projectSlug);
 
-export default function ProjectPage({ params, searchParams }: PageProps) {
-  const project = projects.find(p => p.slug === params.project)
-  
   if (!project) {
-    notFound()
+    notFound();
   }
 
   return (

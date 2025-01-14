@@ -19,7 +19,7 @@ export default function Home() {
             href="/contact"
             className="text-[#3E2723] underline hover:text-[#5D4037]"
           >
-            Hit me up
+            Get in touch
           </Link>
         </div>
 

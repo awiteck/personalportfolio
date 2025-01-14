@@ -20,11 +20,11 @@ export default function ContactPage() {
           
           <p className="text-gray-700"><br /><br />Well... that's all ya got. Sorry.</p>
 
-          <br />
+          {/* <br />
           <br />
           <br />
 
-          <p className="text-gray-700">On second thought, if you're feeling fancy, you can message me on <a href="https://strava.app.link/CV5MIDDr8Pb" className="text-[#3E2723] underline hover:text-[#5D4037]">Strava</a></p>
+          <p className="text-gray-700">On second thought, if you're feeling fancy, you can message me on <a href="https://strava.app.link/CV5MIDDr8Pb" className="text-[#3E2723] underline hover:text-[#5D4037]">Strava</a></p> */}
         </div>
       </div>
     </main>

@@ -2,8 +2,8 @@
 import { personalInfo } from '@/config/personal'
 import { projects } from '@/config/projects'
 import Link from 'next/link'
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
-
+// import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import Image from 'next/image'
 
 export default function Home() {
   const featuredProjects = projects.filter(p => p.isFeatured);
@@ -77,7 +77,12 @@ export default function Home() {
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-gray-900 transition-colors"
         >
-          <FaGithub size={32} />
+         <Image 
+          src="/icons/github.svg"
+          alt="GitHub"
+          width={32}
+          height={32}
+        />
         </a>
         <a
           href={personalInfo.linkedin}
@@ -85,7 +90,12 @@ export default function Home() {
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-gray-900 transition-colors"
         >
-          <FaLinkedin size={32} />
+          <Image 
+            src="/icons/linkedin.svg"
+            alt="LinkedIn"
+            width={32}
+            height={32}
+          />
         </a>
       </div>
     </>

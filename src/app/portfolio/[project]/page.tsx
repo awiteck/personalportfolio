@@ -1,26 +1,52 @@
 // src/app/portfolio/[project]/page.tsx
-import { projects } from '@/config/projects';
-import Link from 'next/link';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import React from 'react';
+import { projects } from '@/config/projects'
+import Link from 'next/link'
+import Image from 'next/image'
+import { notFound } from 'next/navigation'
+import React from 'react'
+import type { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+  params: Promise<{ project: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+// Generate metadata for the page
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const projectSlug = (await params).project
+  const project = projects.find(p => p.slug === projectSlug)
+
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    }
+  }
+
+  return {
+    title: `${project.name} - Portfolio`,
+    description: project.description,
+  }
+}
 
 // Generate all possible static paths for the dynamic route
 export async function generateStaticParams() {
   return projects.map((project) => ({
     project: project.slug,
-  }));
+  }))
 }
 
 export default async function ProjectPage({
   params,
-}: {
-  params: { project: string };
-}) {
-  const project = projects.find((p) => p.slug === params.project);
+  searchParams,
+}: Props) {
+  const projectSlug = (await params).project
+  const project = projects.find(p => p.slug === projectSlug)
 
   if (!project) {
-    notFound();
+    notFound()
   }
 
   return (

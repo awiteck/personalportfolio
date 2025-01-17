@@ -77,7 +77,7 @@ Now, the other issue I hope to address: I feel there has been some deficiency an
     image: "precalc-textbook.png",
     // githubUrl: "https://github.com/awiteck/precalculus-textbook"
     otherUrls: {
-      "PDF": "https://www.aidanwiteck.com/textbook.pdf"
+      "PDF": "/textbook.pdf"
     },
     isFeatured: true
   },

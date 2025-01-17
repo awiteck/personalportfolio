@@ -18,10 +18,12 @@ export default function Home() {
         {/* Header section */}
         <div className="mb-16">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold">{personalInfo.name}</h1>
+            <h1 className="text-2xl font-bold text-primary dark:text-primary-dark">
+              {personalInfo.name}
+            </h1>
             <Link
               href="/contact"
-              className="text-[#3E2723] underline hover:text-[#5D4037]"
+              className="link-default"
             >
               Get in touch
             </Link>
@@ -32,14 +34,14 @@ export default function Home() {
         {/* About Me */}
         <div className="hidden md:block">
           {/* About Me */}
-          <div className="mb-16">
+          <div className="mb-16 text-primary dark:text-primary-dark">
             <h2 className="text-xl font-semibold mb-6">About Me</h2>
             <p>
-            Hey, I'm Aidan. I graduated from Princeton in 2024 and majored in Operations Resrearch and Financial Engineering (that's a long name! Basically, just a lot of <strong>machine learning</strong>, <strong>probability theory</strong>, and <strong>optimization</strong>). I also minored in <strong>Applications of Computing</strong> and <strong>Mandarin Chinese</strong>.
+            Hey, I'm Aidan. I graduated from Princeton in 2024 and majored in Operations Research and Financial Engineering (that's a long name! Basically, just a lot of <strong>machine learning</strong>, <strong>probability theory</strong>, and <strong>optimization</strong>). I also minored in <strong>Applications of Computing</strong> and <strong>Mandarin Chinese</strong>.
 
             <br /><br />
 
-            I've been passionate about AI/ML for quite a while, and have been <a href="https://meetings.aps.org/Meeting/MAR20/Session/G20.3" className="text-[#967969] underline hover:text-[#5D4037]">building neural nets</a> for over 5 years now. 
+            I've been passionate about AI/ML for quite a while, and have been <a href="https://meetings.aps.org/Meeting/MAR20/Session/G20.3" className="link-default">building neural nets</a> for over 5 years now. 
 
             <br /><br />
 
@@ -51,9 +53,9 @@ export default function Home() {
           {/* Projects List */}
           <div>
             <h2 className="text-xl font-semibold mb-6">My favorite projects</h2>
-            <p className="text-gray-700 italic mb-6">
+            <p className="text-primary dark:text-primary-dark italic mb-6">
               I've worked on a lot of stuff, but here are some of my favorites. To see everything, check out my{' '}
-              <Link href="/projects" className="text-[#967969] underline hover:text-[#5D4037]">
+              <Link href="/projects" className="link-default">
                 full project list
               </Link>
               .
@@ -65,7 +67,7 @@ export default function Home() {
                   <span className="text-md">
                     <Link 
                       href={`/portfolio/${project.slug}`}
-                      className="text-[#967969] underline hover:text-[#5D4037]"
+                      className="link-default"
                     >
                       {project.name}
                     </Link>
@@ -79,32 +81,34 @@ export default function Home() {
       </main>
 
 
-      {/* Fixed position social icons */}
+      {/* Desktop social icons */}
       <div className="fixed bottom-8 left-8 hidden md:flex gap-4">
         <a
           href={personalInfo.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-900 transition-colors"
+          className="opacity-70 hover:opacity-100 transition-opacity"
         >
-         <Image 
-          src="/icons/github.svg"
-          alt="GitHub"
-          width={32}
-          height={32}
-        />
+          <Image 
+            src="/icons/github.svg"
+            alt="GitHub"
+            width={32}
+            height={32}
+            className="dark:invert" // This will invert colors in dark mode
+          />
         </a>
         <a
           href={personalInfo.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-900 transition-colors"
+          className="opacity-70 hover:opacity-100 transition-opacity"
         >
           <Image 
             src="/icons/linkedin.svg"
             alt="LinkedIn"
             width={32}
             height={32}
+            className="dark:invert" // This will invert colors in dark mode
           />
         </a>
       </div>
@@ -115,26 +119,28 @@ export default function Home() {
           href={personalInfo.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-900 transition-colors"
+          className="opacity-70 hover:opacity-100 transition-opacity"
         >
-         <Image 
-          src="/icons/github.svg"
-          alt="GitHub"
-          width={32}
-          height={32}
-        />
+          <Image 
+            src="/icons/github.svg"
+            alt="GitHub"
+            width={32}
+            height={32}
+            className="dark:invert" // This will invert colors in dark mode
+          />
         </a>
         <a
           href={personalInfo.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-900 transition-colors"
+          className="opacity-70 hover:opacity-100 transition-opacity"
         >
           <Image 
             src="/icons/linkedin.svg"
             alt="LinkedIn"
             width={32}
             height={32}
+            className="dark:invert" // This will invert colors in dark mode
           />
         </a>
       </div>

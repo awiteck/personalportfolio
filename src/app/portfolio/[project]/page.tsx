@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import React from 'react'
 import type { Metadata, ResolvingMetadata } from 'next'
+import { ExternalLink } from 'lucide-react'
 
 type Props = {
   params: Promise<{ project: string }>
@@ -53,12 +54,14 @@ export default async function ProjectPage({
     <main className="max-w-2xl mx-auto px-4 py-16">
       <Link 
         href="/"
-        className="text-[#3E2723] hover:text-[#5D4037] mb-8 inline-block"
+        className="text-link hover:text-link-hover dark:text-link-dark dark:hover:text-link-dark-hover flex items-center gap-2 mb-8 hover:gap-3 transition-all"
       >
-        ← Back to projects
+        ← Back home
       </Link>
       
-      <h1 className="text-2xl font-bold mb-6">{project.name}</h1>
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary dark:text-primary-dark">
+        {project.name}
+      </h1>
       
       {project.image && (
         <div className="w-full aspect-[16/9] relative mb-8">
@@ -72,19 +75,21 @@ export default async function ProjectPage({
         </div>
       )}
       
-      <div className="prose">
+      <div className="prose dark:prose-invert max-w-none">
         {project.fullDescription && (
-          <div className="whitespace-pre-line">
+          <div className="text-primary dark:text-gray-300 whitespace-pre-line leading-relaxed">
             {project.fullDescription}
           </div>
         )}
         
         {project.technologies && (
-          <div className="flex gap-2 my-4">
+          <div className="flex flex-wrap gap-2 my-6">
             {project.technologies.map(tech => (
               <span 
                 key={tech}
-                className="px-2 py-1 bg-gray-100 rounded-full text-sm"
+                className="px-3 py-1 bg-gray-100 dark:bg-gray-800 
+                         text-gray-700 dark:text-gray-300 
+                         rounded-full text-sm font-medium"
               >
                 {tech}
               </span>
@@ -92,20 +97,20 @@ export default async function ProjectPage({
           </div>
         )}
         
-        <div className="flex items-center gap-4 mt-6">
+        <div className="flex flex-wrap items-center gap-4 mt-8 border-t dark:border-gray-800 pt-6">
           {project.githubUrl && (
             <a 
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-indigo-600 hover:text-indigo-800"
+              className="link-default flex items-center gap-2"
             >
               View on GitHub
             </a>
           )}
           
           {project.githubUrl && (project.liveUrl || Object.keys(project.otherUrls || {}).length > 0) && (
-            <span className="text-gray-300">|</span>
+            <span className="text-gray-300 dark:text-gray-700">|</span>
           )}
 
           {project.liveUrl && (
@@ -113,14 +118,15 @@ export default async function ProjectPage({
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-indigo-600 hover:text-indigo-800"
+              className="link-default flex items-center gap-2"
             >
+              <ExternalLink className="w-4 h-4" />
               Live Demo
             </a>
           )}
 
           {project.liveUrl && Object.keys(project.otherUrls || {}).length > 0 && (
-            <span className="text-gray-300">|</span>
+            <span className="text-gray-300 dark:text-gray-700">|</span>
           )}
 
           {project.otherUrls && Object.entries(project.otherUrls).map(([label, url], index, array) => (
@@ -129,12 +135,13 @@ export default async function ProjectPage({
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-indigo-600 hover:text-indigo-800"
+                className="link-default flex items-center gap-2"
               >
+                <ExternalLink className="w-4 h-4" />
                 {label}
               </a>
               {index < array.length - 1 && (
-                <span className="text-gray-300">|</span>
+                <span className="text-gray-300 dark:text-gray-700">|</span>
               )}
             </React.Fragment>
           ))}

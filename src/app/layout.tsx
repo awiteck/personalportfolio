@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#f5f3eb] vsc-initialized`}>
+      <body className={`${inter.className} bg-[#f5f3eb] dark:bg-[#1F2937] min-h-screen vsc-initialized`}>
         <TreeLayout>
           {children}
         </TreeLayout>

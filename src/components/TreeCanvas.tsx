@@ -3,6 +3,7 @@ import React, { Component } from "react";
 
 interface TreeCanvasProps {
   height: number;
+  width: number;
   trunkColor?: string;
   leavesColor?: string;
 }
@@ -68,7 +69,7 @@ class TreeCanvas extends Component<TreeCanvasProps> {
     return (
       <canvas
         ref={this.canvasRef}
-        width={400}
+        width={this.props.width}  
         height={this.props.height}
         style={{ display: "block" }}
       />

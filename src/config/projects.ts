@@ -47,6 +47,19 @@ Originally introduced in 2017 for natural language processing, transformers — 
     isFeatured: true
   },
 
+  {
+    name: "Flow Matching: Learning the Earth's Wind Patterns",
+    slug: "flow-matching",
+    description: "Developed a flow matching model to learn a vector field of the Earth's wind",
+    fullDescription: `I recently tackled an interesting challenge: predicting how wind moves across the Earth's surface using some clever math and machine learning. The core idea was pretty ambitious - teaching a neural network to figure out wind patterns just by knowing where air particles start and end up, without needing to track their exact paths in between.
+
+    I built on Meta's flow matching approach, but applied it to a real-world problem using actual wind data from NOAA's weather forecasting system. The tricky part was handling the math of particle movement on a sphere (turns out the Earth being round makes things a bit more complicated!). I used a numerical method called RK4 to simulate these movements accurately and generate examples to train the model.`,
+    technologies: ["Pytorch", "Python"],
+    image: "flow_matching.gif",
+    githubUrl: "https://github.com/awiteckzb/wind-flow-matching",
+    isFeatured: false
+  },
+
 
   {
     name: "Radiation: A Deterministic Generative Art Project",

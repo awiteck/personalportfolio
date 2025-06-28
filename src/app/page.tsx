@@ -45,7 +45,7 @@ export default function Home() {
 
             <br /><br />
 
-            I was also on the varsity heavyweight rowing team. Now, I mostly run (currently training for Napa Marathon this March!).
+            I was also on the varsity heavyweight rowing team. Now, I mostly run.
             </p>
           </div>
 
